@@ -2,6 +2,8 @@ import React from "react";
 
 const Logo = responsive_globals.home_url + '/wp-content/plugins/responsive-block-editor-addons/admin/images/responsive-blocks.svg';
 
+const { __ } = wp.i18n;
+
 const RbeaSupportControl = ({ blockSlug }) => {
     const blockData = (typeof rbeaSupportBlocks !== 'undefined' && Array.isArray(rbeaSupportBlocks.blocks))
         ? rbeaSupportBlocks.blocks.find(block => block.key === blockSlug)
@@ -25,7 +27,7 @@ const RbeaSupportControl = ({ blockSlug }) => {
                     className="rbea-support-control-panel__link"
                 >
                     <span className="dashicons dashicons-controls-play"></span>
-                    Demo
+                    {__("Demo", "responsive-block-editor-addons")}
                 </a>)  }
 
                 <a
@@ -35,7 +37,7 @@ const RbeaSupportControl = ({ blockSlug }) => {
                     className="rbea-support-control-panel__link"
                 >
                     <span className="dashicons dashicons-media-default"></span>
-                    Docs
+                    {__("Docs", "responsive-block-editor-addons")}
                 </a>
             </div>
         </div>
